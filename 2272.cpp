@@ -1,4 +1,5 @@
-//      开始错了位置，一来就是hard，只能下次一定了
+//      开始错了位置，一来就是hard，只能下次一定了,直接cv
+
 class Solution {
 public:
     int largestVariance(string s) {

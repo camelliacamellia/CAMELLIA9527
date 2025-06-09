@@ -1,3 +1,4 @@
+//      LeetCode 2278 - Percentage of Letter in String
 class Solution {
 public:
     int percentageLetter(string s, char letter) {

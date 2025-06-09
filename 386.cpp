@@ -1,4 +1,4 @@
-// 字典排序，使用sort+lambda实现一个按字典排序的函数自动对向量排序，就是效率不太高。
+// 字典排序，使用sort+lambda实现一个按字典排序的函数自动对向量排序，就是效率不太高
 class Solution {
 public:
     vector<int> lexicalOrder(int n) {

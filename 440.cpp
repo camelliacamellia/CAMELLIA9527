@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 // 功能可以实现，但是超时了，每日一尽力+cv
+=======
+// 功能可以实现，但是超时了，每日一尽力
+>>>>>>> 75f5c859e3604e91f7e8c361287f8602a39e6247
 class Solution {
 public:
     int findKthNumber(int n, int k) {

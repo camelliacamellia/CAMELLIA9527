@@ -1,4 +1,4 @@
-// 	这些都是头文件
+
 #include<iostream>
 #include<iomanip>
 #include<winsock.h>
@@ -21,7 +21,7 @@ public:
 		mysql_init(&mysql);
 		if (mysql_real_connect(&mysql, "127.0.0.1", "root", "123456", "wzry", 3306, NULL, 0))
 		{
-			cout << "图鉴连接中......" << endl;
+			cout << "图鉴连接�?....." << endl;
 		}
 		else
 		{
@@ -55,7 +55,7 @@ public:
 		}
 		else
 		{
-			cout << "查找错误！！！" << endl;
+			cout << "查找错误！！�? << endl;
 		}
 		if (ok)
 		{
@@ -76,7 +76,7 @@ public:
 		}
 		else
 		{
-			cout << "错误！！！" << mysql_error(&mysql) << endl;
+			cout << "错误！！�? << mysql_error(&mysql) << endl;
 			return false;
 		}
 	}
@@ -135,13 +135,13 @@ public:
 		const char* sql;
 		int num = 0;
 		STR = "SELECT * FROM character_table WHERE number > 0 ";
-		cout << "选择按什么查找......" << endl;
-		cout << "按 角色 ---------> 1" << endl;
-		cout << "按 种族 ---------> 2" << endl;
-		cout << "按 能量 ---------> 3" << endl;
-		cout << "按 城市 ---------> 4" << endl;
-		cout << "按 势力 ---------> 5" << endl;
-		cout << "按 身份 ---------> 6" << endl;
+		cout << "选择按什么查�?....." << endl;
+		cout << "�?角色 ---------> 1" << endl;
+		cout << "�?种族 ---------> 2" << endl;
+		cout << "�?能量 ---------> 3" << endl;
+		cout << "�?城市 ---------> 4" << endl;
+		cout << "�?势力 ---------> 5" << endl;
+		cout << "�?身份 ---------> 6" << endl;
 		cout << "合并 查找 -------> 7" << endl;
 		cin >> num;
 		Sleep(1000);
@@ -149,58 +149,58 @@ public:
 		switch (num)
 		{
 		case 1:
-			cout << "输入你要查找的 名字 :" << endl;
+			cout << "输入你要查找�?名字 :" << endl;
 			cin >> s;
 			STR += "and name like '%" + s + "%' ";
 			break;
 		case 2:
-			cout << "输入你要查找的 种族 :" << endl;
+			cout << "输入你要查找�?种族 :" << endl;
 			cin >> s;
 			STR += "and race like '%" + s + "%' ";
 			break;
 		case 3:
-			cout << "输入你要查找的 能量 :" << endl;
+			cout << "输入你要查找�?能量 :" << endl;
 			cin >> s;
 			STR += "and energy like '%" + s + "%' ";
 			break;
 		case 4:
-			cout << "输入你要查找的 城市 :" << endl;
+			cout << "输入你要查找�?城市 :" << endl;
 			cin >> s;
 			STR += "and city like '%" + s + "%' ";
 			break;
 		case 5:
-			cout << "输入你要查找的 势力 :" << endl;
+			cout << "输入你要查找�?势力 :" << endl;
 			cin >> s;
 			STR += "and force like '%" + s + "%' ";
 			break;
 		case 6:
-			cout << "输入你要查找的 身份 :" << endl;
+			cout << "输入你要查找�?身份 :" << endl;
 			cin >> s;
 			STR += "and rank like '%" + s + "%' ";
 		case 7:
 		{
 			cout << "合并查找中，输入你需要的类型......" << endl;
-			cout << "输入你要查找的 种族 或输入 NULL 代表无关:" << endl;
+			cout << "输入你要查找�?种族 或输�?NULL 代表无关:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and race like '%" + s + "%' ";
 
-			cout << "输入你要查找的 能量 或输入 NULL 代表无关:" << endl;
+			cout << "输入你要查找�?能量 或输�?NULL 代表无关:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and energy like '%" + s + "%' ";
 
-			cout << "输入你要查找的 城市 或输入 NULL 代表无关:" << endl;
+			cout << "输入你要查找�?城市 或输�?NULL 代表无关:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and city like '%" + s + "%' ";
 
-			cout << "输入你要查找的 势力 或输入 NULL 代表无关:" << endl;
+			cout << "输入你要查找�?势力 或输�?NULL 代表无关:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and `force` like '%" + s + "%' ";
 
-			cout << "输入你要查找的 身份 或输入 NULL 代表无关:" << endl;
+			cout << "输入你要查找�?身份 或输�?NULL 代表无关:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and `rank` like '%" + s + "%' ";
@@ -225,25 +225,25 @@ public:
 		cin >> name;
 		if (name == "NULL")
 		{
-			cout << "无效名" << endl;
-			cout << "退出插入......" << endl;
+			cout << "无效�? << endl;
+			cout << "退出插�?....." << endl;
 			Sleep(2000);
 			system("cls");
 			return;
 		}
-		cout << "输入种族 或 NULL:" << endl;
+		cout << "输入种族 �?NULL:" << endl;
 		cin >> race;
-		cout << "输入身高 或 0:" << endl;
+		cout << "输入身高 �?0:" << endl;
 		cin >> height;
-		cout << "输入能量 或 NULL:" << endl;
+		cout << "输入能量 �?NULL:" << endl;
 		cin >> energy;
-		cout << "输入城市 或 NULL:" << endl;
+		cout << "输入城市 �?NULL:" << endl;
 		cin >> city;
-		cout << "输入势力 或 NULL:" << endl;
+		cout << "输入势力 �?NULL:" << endl;
 		cin >> force;
-		cout << "输入身份 或 NULL:" << endl;
+		cout << "输入身份 �?NULL:" << endl;
 		cin >> rank;
-		cout << "输入角色简介 或 NULL:" << endl;
+		cout << "输入角色简�?�?NULL:" << endl;
 		cin >> introduce;
 		STR = "INSERT INTO character_table (name, race, height, energy, city, `force`, `rank`, introduce) "
 			"VALUES('" + escapeSQL(name) + "', "
@@ -258,20 +258,20 @@ public:
 		INSERT(sql);
 		CLS();
 	};
-	string escapeSQL(const string& input) {			// 防止 SQL注入 进行 简单加密
+	string escapeSQL(const string& input) {			// 防止 SQL注入 进行 简单加�?
 		string output;
-		output.reserve(input.length() * 2);  // 预分配空间提高效率
+		output.reserve(input.length() * 2);  // 预分配空间提高效�?
 
 		for (char c : input) {
 			switch (c) {
-			case '\'': output += "''"; break;  // 转义单引号
-			case '\\': output += "\\\\"; break; // 转义反斜杠
-			case '\"': output += "\\\""; break; // 转义双引号
+			case '\'': output += "''"; break;  // 转义单引�?
+			case '\\': output += "\\\\"; break; // 转义反斜�?
+			case '\"': output += "\\\""; break; // 转义双引�?
 			case '\0': output += "\\0"; break;  // 转义NULL字符
-			case '\b': output += "\\b"; break;  // 转义退格
+			case '\b': output += "\\b"; break;  // 转义退�?
 			case '\n': output += "\\n"; break;  // 转义换行
 			case '\r': output += "\\r"; break;  // 转义回车
-			case '\t': output += "\\t"; break;  // 转义制表符
+			case '\t': output += "\\t"; break;  // 转义制表�?
 			default: output += c;
 			}
 		}
@@ -311,7 +311,7 @@ public:
 		cin >> name2;
 		cout << "输入 关系:" << endl;
 		cin >> rela;
-		cout << "输入 一段描述:" << endl;
+		cout << "输入 一段描�?" << endl;
 		cin >> s;
 
 		STR = "INSERT INTO relationship_table (character_name,related_character_name,relationship_type, description)\
@@ -321,7 +321,7 @@ public:
 		CLS();
 	}
 
-	void SKILLS_SEEK()					// 查找 技能
+	void SKILLS_SEEK()					// 查找 技�?
 	{
 		system("cls");
 		string STR;
@@ -335,7 +335,7 @@ public:
 		CLS();
 	}
 
-	void SKILLS_INSERT()				// 插入 技能
+	void SKILLS_INSERT()				// 插入 技�?
 	{
 		system("cls");
 		string STR;
@@ -351,11 +351,11 @@ public:
 		{
 			cout << "输入 技能名:";
 			cin >> skill;
-			cout << "输入 技能类型:";
+			cout << "输入 技能类�?";
 			cin >> skill_type;
-			cout << "输入 技能介绍:";
+			cout << "输入 技能介�?";
 			cin >> skill_introduction;
-			cout << "输入 技能蓝耗:";
+			cout << "输入 技能蓝�?";
 			cin >> mana;
 			STR = "INSERT INTO skills_table (character_name, skill_name, skill_type, skill_description, power_level)VALUES\
 					('" + escapeSQL(name)
@@ -366,14 +366,14 @@ public:
 			sql = STR.c_str();
 			if (!INSERT(sql))
 			{
-				cout << "插入错误 ，角色不存在或数据库未连接......" << endl;
+				cout << "插入错误 ，角色不存在或数据库未连�?....." << endl;
 				cout << "强制结束......" << endl;
 				CLS();
 				return;
 			}
 			else
 			{
-				cout << "修改保存中......" << endl;
+				cout << "修改保存�?....." << endl;
 				CLS();
 			}
 		}
@@ -389,19 +389,19 @@ public:
 		const char* sql;
 		cout << "输入需要修改的英雄" << endl;
 		cin >> name;
-		cout << "输入种族 或 NULL:" << endl;
+		cout << "输入种族 �?NULL:" << endl;
 		cin >> race;
-		cout << "输入身高 或 0:" << endl;
+		cout << "输入身高 �?0:" << endl;
 		cin >> height;
-		cout << "输入能量 或 NULL:" << endl;
+		cout << "输入能量 �?NULL:" << endl;
 		cin >> energy;
-		cout << "输入城市 或 NULL:" << endl;
+		cout << "输入城市 �?NULL:" << endl;
 		cin >> city;
-		cout << "输入势力 或 NULL:" << endl;
+		cout << "输入势力 �?NULL:" << endl;
 		cin >> force;
-		cout << "输入身份 或 NULL:" << endl;
+		cout << "输入身份 �?NULL:" << endl;
 		cin >> rank;
-		cout << "输入角色简介 或 NULL:" << endl;
+		cout << "输入角色简�?�?NULL:" << endl;
 		cin >> introduce;
 		STR = "UPDATE character_table SET race = '" + escapeSQL(race)
 			+ "',height = '" + escapeSQL(height)
@@ -417,14 +417,14 @@ public:
 		return true;
 	}
 
-	void SKILLS_DELETE()					// 删除英雄技能
+	void SKILLS_DELETE()					// 删除英雄技�?
 	{
 		system("cls");
 		string STR;
 		string name, name_skills;
 		const char* sql;
 		const char* sqll;
-		cout << "输入要删除 技能 的 英雄:" << endl;
+		cout << "输入要删�?技�?�?英雄:" << endl;
 		cin >> name;
 		STR = "SELECT * FROM skills_table WHERE character_name = '" + escapeSQL(name) + "'";
 		sqll = STR.c_str();
@@ -435,7 +435,7 @@ public:
 			system("cls");
 			return;
 		}
-		cout << "输入需要删除的技能:";
+		cout << "输入需要删除的技�?";
 		cin >> name_skills;
 		STR = "DELETE FROM skills_table WHERE character_name = '" + escapeSQL(name)
 			+ "'and skill_name = '" + escapeSQL(name_skills) + "'; ";
@@ -466,7 +466,7 @@ public:
 		}
 		else
 		{
-			cout << "将要删除以上关系（Y/N）" << endl;
+			cout << "将要删除以上关系（Y/N�? << endl;
 			cin >> YES;
 			if (YES == "Y" || YES == "y")
 			{
@@ -504,7 +504,7 @@ public:
 		}
 		else
 		{
-			cout << "关于该英雄的所有信息(包括技能和关系网)都会被删除，你确定要这么操作吗(Y/N)?" << endl;
+			cout << "关于该英雄的所有信�?包括技能和关系�?都会被删除，你确定要这么操作�?Y/N)?" << endl;
 			cin >> YES;
 			if (YES == "Y" || YES == "y")
 			{
@@ -574,11 +574,11 @@ int main()
 	int num = 1;
 	while (num)
 	{
-		cout << " 请选择以下 功能 中的一个或按 -1 退出" << endl;
-		cout << "  所有 英雄 介绍 -------> 1" << endl;
+		cout << " 请选择以下 功能 中的一个或�?-1 退�? << endl;
+		cout << "  所�?英雄 介绍 -------> 1" << endl;
 		cout << "  英雄 介绍 ------------> 2" << endl;
-		cout << "  英雄 关系网 ----------> 3" << endl;
-		cout << "  英雄 技能介绍 --------> 4" << endl;
+		cout << "  英雄 关系�?----------> 3" << endl;
+		cout << "  英雄 技能介�?--------> 4" << endl;
 		cout << "  修改 英雄 信息--------> 5" << endl;
 		cin >> num;
 		Sleep(300);
@@ -605,7 +605,7 @@ int main()
 			cin >> num;
 			if (num != 123456)
 			{
-				cout << "验证错误，禁止删除角色......" << endl;
+				cout << "验证错误，禁止删除角�?....." << endl;
 				cout << "退出中......" << endl;
 				Sleep(3000);
 				system("cls");
@@ -619,9 +619,9 @@ int main()
 			cout << "选择需要修改的信息" << endl;
 			cout << " 添加 英雄  ----------------> 1" << endl;
 			cout << " 添加 英雄 关系 ------------> 2" << endl;
-			cout << " 添加 英雄 技能 ------------> 3" << endl;
+			cout << " 添加 英雄 技�?------------> 3" << endl;
 			cout << " 修改 英雄  ----------------> 4" << endl;
-			cout << " 删除 英雄 技能 ------------> 5" << endl;
+			cout << " 删除 英雄 技�?------------> 5" << endl;
 			cout << " 删除 英雄 关系 ------------> 6" << endl;
 			cout << " 删除 英雄 -----------------> 7" << endl;
 			cin >> num2;
@@ -650,7 +650,7 @@ int main()
 					M.CHARACTER_DELETE();
 					break;
 				default:
-					cout << "修改保存中......" << endl;
+					cout << "修改保存�?....." << endl;
 					Sleep(3000);
 
 					break;
@@ -659,7 +659,7 @@ int main()
 		}
 		break;
 		default:
-			cout << "图鉴关闭中......" << endl;
+			cout << "图鉴关闭�?....." << endl;
 			Sleep(3000);
 			return 0;
 		}

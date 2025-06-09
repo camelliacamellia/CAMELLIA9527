@@ -1,4 +1,4 @@
-// 功能可以实现，但是超时了，每日一尽力+cv
+// 功能可以实现，但是超时了，每日一尽力
 class Solution {
 public:
     int findKthNumber(int n, int k) {

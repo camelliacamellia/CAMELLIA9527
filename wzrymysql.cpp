@@ -21,7 +21,7 @@ public:
 		mysql_init(&mysql);
 		if (mysql_real_connect(&mysql, "127.0.0.1", "root", "123456", "wzry", 3306, NULL, 0))
 		{
-			cout << "å›¾é‰´è¿žæŽ¥ä¸?....." << endl;
+			cout << "Í¼¼øÁ¬½ÓÖÐ......" << endl;
 		}
 		else
 		{
@@ -31,7 +31,7 @@ public:
 		system("cls");
 	}
 
-	bool seek(const char* sql, int n)		//æŸ¥æ‰¾å‡½æ•°
+	bool seek(const char* sql, int n)		//²éÕÒº¯Êý
 	{
 		int res = mysql_query(&mysql, sql);
 		bool ok = true;
@@ -55,11 +55,11 @@ public:
 		}
 		else
 		{
-			cout << "æŸ¥æ‰¾é”™è¯¯ï¼ï¼ï¼? << endl;
+			cout << "²éÕÒ´íÎó£¡£¡£¡" << endl;
 		}
 		if (ok)
 		{
-			cout << "æœªæ‰¾åˆ°è‹±é›„ï¼Œè¯·æ ¸å¯¹åŽæŸ¥æ‰¾......" << endl;
+			cout << "Î´ÕÒµ½Ó¢ÐÛ£¬ÇëºË¶Ôºó²éÕÒ......" << endl;
 			return false;
 		}
 		cout << endl;
@@ -71,12 +71,12 @@ public:
 		int res = mysql_query(&mysql, sql);
 		if (!res)
 		{
-			cout << "æ’å…¥æˆåŠŸ" << endl;
+			cout << "²åÈë³É¹¦" << endl;
 			return true;
 		}
 		else
 		{
-			cout << "é”™è¯¯ï¼ï¼ï¼? << mysql_error(&mysql) << endl;
+			cout << "´íÎó£¡£¡£¡" << mysql_error(&mysql) << endl;
 			return false;
 		}
 	}
@@ -86,12 +86,12 @@ public:
 		int res = mysql_query(&mysql, sql);
 		if (!res)
 		{
-			cout << "ä¿®æ”¹æˆåŠŸ......" << endl;
+			cout << "ÐÞ¸Ä³É¹¦......" << endl;
 			return true;
 		}
 		else
 		{
-			cout << "ä¿®æ”¹é”™è¯¯......" << mysql_error(&mysql) << endl;
+			cout << "ÐÞ¸Ä´íÎó......" << mysql_error(&mysql) << endl;
 			return false;
 		}
 	}
@@ -102,32 +102,32 @@ public:
 		int res = mysql_query(&mysql, sql);
 		if (!res)
 		{
-			cout << "åˆ é™¤æˆåŠŸ......" << endl;
+			cout << "É¾³ý³É¹¦......" << endl;
 			return true;
 		}
 		else
 		{
-			cout << "åˆ é™¤é”™è¯¯: " << mysql_error(&mysql) << endl;  // è¾“å‡ºå…·ä½“é”™è¯¯ä¿¡æ¯
+			cout << "É¾³ý´íÎó: " << mysql_error(&mysql) << endl;  // Êä³ö¾ßÌå´íÎóÐÅÏ¢
 			return false;
 		}
 	}
 
 	int FROM()
 	{
-		cout << left << setw(10) << " ç¼–å· ";
-		cout << left << setw(10) << " å§“å ";
-		cout << left << setw(10) << " ç§æ— ";
-		cout << left << setw(10) << " èº«é«˜ ";
-		cout << left << setw(10) << " èƒ½é‡ ";
-		cout << left << setw(10) << " åŸŽå¸‚ ";
-		cout << left << setw(10) << " åŠ¿åŠ› ";
-		cout << left << setw(10) << " èº«ä»½ ";
-		cout << left << setw(10) << " ä»‹ç» ";
+		cout << left << setw(10) << " ±àºÅ ";
+		cout << left << setw(10) << " ÐÕÃû ";
+		cout << left << setw(10) << " ÖÖ×å ";
+		cout << left << setw(10) << " Éí¸ß ";
+		cout << left << setw(10) << " ÄÜÁ¿ ";
+		cout << left << setw(10) << " ³ÇÊÐ ";
+		cout << left << setw(10) << " ÊÆÁ¦ ";
+		cout << left << setw(10) << " Éí·Ý ";
+		cout << left << setw(10) << " ½éÉÜ ";
 		return 0;
 	}
 
 
-	void base_seek()			// æŸ¥æ‰¾åŸºæœ¬ä¿¡æ¯
+	void base_seek()			// ²éÕÒ»ù±¾ÐÅÏ¢
 	{
 		system("cls");
 		string STR;
@@ -135,72 +135,72 @@ public:
 		const char* sql;
 		int num = 0;
 		STR = "SELECT * FROM character_table WHERE number > 0 ";
-		cout << "é€‰æ‹©æŒ‰ä»€ä¹ˆæŸ¥æ‰?....." << endl;
-		cout << "æŒ?è§’è‰² ---------> 1" << endl;
-		cout << "æŒ?ç§æ— ---------> 2" << endl;
-		cout << "æŒ?èƒ½é‡ ---------> 3" << endl;
-		cout << "æŒ?åŸŽå¸‚ ---------> 4" << endl;
-		cout << "æŒ?åŠ¿åŠ› ---------> 5" << endl;
-		cout << "æŒ?èº«ä»½ ---------> 6" << endl;
-		cout << "åˆå¹¶ æŸ¥æ‰¾ -------> 7" << endl;
+		cout << "Ñ¡Ôñ°´Ê²Ã´²éÕÒ......" << endl;
+		cout << "°´ ½ÇÉ« ---------> 1" << endl;
+		cout << "°´ ÖÖ×å ---------> 2" << endl;
+		cout << "°´ ÄÜÁ¿ ---------> 3" << endl;
+		cout << "°´ ³ÇÊÐ ---------> 4" << endl;
+		cout << "°´ ÊÆÁ¦ ---------> 5" << endl;
+		cout << "°´ Éí·Ý ---------> 6" << endl;
+		cout << "ºÏ²¢ ²éÕÒ -------> 7" << endl;
 		cin >> num;
 		Sleep(1000);
 		system("cls");
 		switch (num)
 		{
 		case 1:
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?åå­— :" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ Ãû×Ö :" << endl;
 			cin >> s;
 			STR += "and name like '%" + s + "%' ";
 			break;
 		case 2:
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?ç§æ— :" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ ÖÖ×å :" << endl;
 			cin >> s;
 			STR += "and race like '%" + s + "%' ";
 			break;
 		case 3:
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?èƒ½é‡ :" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ ÄÜÁ¿ :" << endl;
 			cin >> s;
 			STR += "and energy like '%" + s + "%' ";
 			break;
 		case 4:
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?åŸŽå¸‚ :" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ ³ÇÊÐ :" << endl;
 			cin >> s;
 			STR += "and city like '%" + s + "%' ";
 			break;
 		case 5:
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?åŠ¿åŠ› :" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ ÊÆÁ¦ :" << endl;
 			cin >> s;
 			STR += "and force like '%" + s + "%' ";
 			break;
 		case 6:
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?èº«ä»½ :" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ Éí·Ý :" << endl;
 			cin >> s;
 			STR += "and rank like '%" + s + "%' ";
 		case 7:
 		{
-			cout << "åˆå¹¶æŸ¥æ‰¾ä¸­ï¼Œè¾“å…¥ä½ éœ€è¦çš„ç±»åž‹......" << endl;
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?ç§æ— æˆ–è¾“å…?NULL ä»£è¡¨æ— å…³:" << endl;
+			cout << "ºÏ²¢²éÕÒÖÐ£¬ÊäÈëÄãÐèÒªµÄÀàÐÍ......" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ ÖÖ×å »òÊäÈë NULL ´ú±íÎÞ¹Ø:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and race like '%" + s + "%' ";
 
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?èƒ½é‡ æˆ–è¾“å…?NULL ä»£è¡¨æ— å…³:" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ ÄÜÁ¿ »òÊäÈë NULL ´ú±íÎÞ¹Ø:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and energy like '%" + s + "%' ";
 
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?åŸŽå¸‚ æˆ–è¾“å…?NULL ä»£è¡¨æ— å…³:" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ ³ÇÊÐ »òÊäÈë NULL ´ú±íÎÞ¹Ø:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and city like '%" + s + "%' ";
 
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?åŠ¿åŠ› æˆ–è¾“å…?NULL ä»£è¡¨æ— å…³:" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ ÊÆÁ¦ »òÊäÈë NULL ´ú±íÎÞ¹Ø:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and `force` like '%" + s + "%' ";
 
-			cout << "è¾“å…¥ä½ è¦æŸ¥æ‰¾çš?èº«ä»½ æˆ–è¾“å…?NULL ä»£è¡¨æ— å…³:" << endl;
+			cout << "ÊäÈëÄãÒª²éÕÒµÄ Éí·Ý »òÊäÈë NULL ´ú±íÎÞ¹Ø:" << endl;
 			cin >> s;
 			if (s != "NULL")
 				STR += "and `rank` like '%" + s + "%' ";
@@ -213,7 +213,7 @@ public:
 		CLS();
 	}
 
-	void base_insert()			// æ’å…¥åŸºæœ¬ä¿¡æ¯
+	void base_insert()			// ²åÈë»ù±¾ÐÅÏ¢
 	{
 		system("cls");
 		string STR;
@@ -221,29 +221,29 @@ public:
 		const char* sql;
 		string name, race, energy, city, force, rank, introduce;
 		string height;
-		cout << "è¾“å…¥åå­—:" << endl;
+		cout << "ÊäÈëÃû×Ö:" << endl;
 		cin >> name;
 		if (name == "NULL")
 		{
-			cout << "æ— æ•ˆå? << endl;
-			cout << "é€€å‡ºæ’å…?....." << endl;
+			cout << "ÎÞÐ§Ãû" << endl;
+			cout << "ÍË³ö²åÈë......" << endl;
 			Sleep(2000);
 			system("cls");
 			return;
 		}
-		cout << "è¾“å…¥ç§æ— æˆ?NULL:" << endl;
+		cout << "ÊäÈëÖÖ×å »ò NULL:" << endl;
 		cin >> race;
-		cout << "è¾“å…¥èº«é«˜ æˆ?0:" << endl;
+		cout << "ÊäÈëÉí¸ß »ò 0:" << endl;
 		cin >> height;
-		cout << "è¾“å…¥èƒ½é‡ æˆ?NULL:" << endl;
+		cout << "ÊäÈëÄÜÁ¿ »ò NULL:" << endl;
 		cin >> energy;
-		cout << "è¾“å…¥åŸŽå¸‚ æˆ?NULL:" << endl;
+		cout << "ÊäÈë³ÇÊÐ »ò NULL:" << endl;
 		cin >> city;
-		cout << "è¾“å…¥åŠ¿åŠ› æˆ?NULL:" << endl;
+		cout << "ÊäÈëÊÆÁ¦ »ò NULL:" << endl;
 		cin >> force;
-		cout << "è¾“å…¥èº«ä»½ æˆ?NULL:" << endl;
+		cout << "ÊäÈëÉí·Ý »ò NULL:" << endl;
 		cin >> rank;
-		cout << "è¾“å…¥è§’è‰²ç®€ä»?æˆ?NULL:" << endl;
+		cout << "ÊäÈë½ÇÉ«¼ò½é »ò NULL:" << endl;
 		cin >> introduce;
 		STR = "INSERT INTO character_table (name, race, height, energy, city, `force`, `rank`, introduce) "
 			"VALUES('" + escapeSQL(name) + "', "
@@ -258,60 +258,60 @@ public:
 		INSERT(sql);
 		CLS();
 	};
-	string escapeSQL(const string& input) {			// é˜²æ­¢ SQLæ³¨å…¥ è¿›è¡Œ ç®€å•åŠ å¯?
+	string escapeSQL(const string& input) {			// ·ÀÖ¹ SQL×¢Èë ½øÐÐ ¼òµ¥¼ÓÃÜ
 		string output;
-		output.reserve(input.length() * 2);  // é¢„åˆ†é…ç©ºé—´æé«˜æ•ˆçŽ?
+		output.reserve(input.length() * 2);  // Ô¤·ÖÅä¿Õ¼äÌá¸ßÐ§ÂÊ
 
 		for (char c : input) {
 			switch (c) {
-			case '\'': output += "''"; break;  // è½¬ä¹‰å•å¼•å?
-			case '\\': output += "\\\\"; break; // è½¬ä¹‰åæ–œæ?
-			case '\"': output += "\\\""; break; // è½¬ä¹‰åŒå¼•å?
-			case '\0': output += "\\0"; break;  // è½¬ä¹‰NULLå­—ç¬¦
-			case '\b': output += "\\b"; break;  // è½¬ä¹‰é€€æ ?
-			case '\n': output += "\\n"; break;  // è½¬ä¹‰æ¢è¡Œ
-			case '\r': output += "\\r"; break;  // è½¬ä¹‰å›žè½¦
-			case '\t': output += "\\t"; break;  // è½¬ä¹‰åˆ¶è¡¨ç¬?
+			case '\'': output += "''"; break;  // ×ªÒåµ¥ÒýºÅ
+			case '\\': output += "\\\\"; break; // ×ªÒå·´Ð±¸Ü
+			case '\"': output += "\\\""; break; // ×ªÒåË«ÒýºÅ
+			case '\0': output += "\\0"; break;  // ×ªÒåNULL×Ö·û
+			case '\b': output += "\\b"; break;  // ×ªÒåÍË¸ñ
+			case '\n': output += "\\n"; break;  // ×ªÒå»»ÐÐ
+			case '\r': output += "\\r"; break;  // ×ªÒå»Ø³µ
+			case '\t': output += "\\t"; break;  // ×ªÒåÖÆ±í·û
 			default: output += c;
 			}
 		}
 		return output;
 	}
 
-	void RELATIONSHIP_SEEK()			// æŸ¥æ‰¾å…³ç³»
+	void RELATIONSHIP_SEEK()			// ²éÕÒ¹ØÏµ
 	{
 		system("cls");
 		string STR;
 		const char* sql;
 		string name;
-		cout << "è¾“å…¥è¦æŸ¥æ‰¾çš„äººç‰©:" << endl;
+		cout << "ÊäÈëÒª²éÕÒµÄÈËÎï:" << endl;
 		cin >> name;
 		STR = "SELECT * FROM relationship_table WHERE character_name like '%"
 			+ escapeSQL(name) + "%' or related_character_name like '%" + escapeSQL(name) + "%';";
 		sql = STR.c_str();
-		cout << left << setw(10) << " ç¼–å· ";
-		cout << left << setw(10) << " å§“å ";
-		cout << left << setw(10) << " å§“å ";
-		cout << left << setw(10) << " å…³ç³» ";
-		cout << left << setw(10) << " ä»‹ç» ";
+		cout << left << setw(10) << " ±àºÅ ";
+		cout << left << setw(10) << " ÐÕÃû ";
+		cout << left << setw(10) << " ÐÕÃû ";
+		cout << left << setw(10) << " ¹ØÏµ ";
+		cout << left << setw(10) << " ½éÉÜ ";
 		seek(sql, 4);
 
 		CLS();
 	}
 
-	void RELATIONSHIP_INSERT()			//æ’å…¥å…³ç³»
+	void RELATIONSHIP_INSERT()			//²åÈë¹ØÏµ
 	{
 		system("cls");
 		string STR;
 		string name1, name2, rela, s;
 		const char* sql;
-		cout << "è¾“å…¥ å§“å:" << endl;
+		cout << "ÊäÈë ÐÕÃû:" << endl;
 		cin >> name1;
-		cout << "è¾“å…¥ å§“å:" << endl;
+		cout << "ÊäÈë ÐÕÃû:" << endl;
 		cin >> name2;
-		cout << "è¾“å…¥ å…³ç³»:" << endl;
+		cout << "ÊäÈë ¹ØÏµ:" << endl;
 		cin >> rela;
-		cout << "è¾“å…¥ ä¸€æ®µæè¿?" << endl;
+		cout << "ÊäÈë Ò»¶ÎÃèÊö:" << endl;
 		cin >> s;
 
 		STR = "INSERT INTO relationship_table (character_name,related_character_name,relationship_type, description)\
@@ -321,13 +321,13 @@ public:
 		CLS();
 	}
 
-	void SKILLS_SEEK()					// æŸ¥æ‰¾ æŠ€èƒ?
+	void SKILLS_SEEK()					// ²éÕÒ ¼¼ÄÜ
 	{
 		system("cls");
 		string STR;
 		const char* sql;
 		string name;
-		cout << "è¾“å…¥è¦æŸ¥æ‰¾æŠ€èƒ½çš„è§’è‰²:" << endl;
+		cout << "ÊäÈëÒª²éÕÒ¼¼ÄÜµÄ½ÇÉ«:" << endl;
 		cin >> name;
 		STR = "SELECT * FROM skills_table WHERE character_name like '%" + escapeSQL(name) + "%'";
 		sql = STR.c_str();
@@ -335,27 +335,27 @@ public:
 		CLS();
 	}
 
-	void SKILLS_INSERT()				// æ’å…¥ æŠ€èƒ?
+	void SKILLS_INSERT()				// ²åÈë ¼¼ÄÜ
 	{
 		system("cls");
 		string STR;
 		string name, caaracter_name;
 		const char* sql;
 		int n;
-		cout << "è¾“å…¥éœ€è¦åŠ å…¥çš„æŠ€èƒ½æ•°:";
+		cout << "ÊäÈëÐèÒª¼ÓÈëµÄ¼¼ÄÜÊý:";
 		cin >> n;
-		cout << "è¾“å…¥è¦æ’å…¥æŠ€èƒ½çš„è§’è‰²:" << endl;
+		cout << "ÊäÈëÒª²åÈë¼¼ÄÜµÄ½ÇÉ«:" << endl;
 		cin >> name;
 		string skill, skill_type, skill_introduction, mana;
 		for (int i = 0; i < n; i++)
 		{
-			cout << "è¾“å…¥ æŠ€èƒ½å:";
+			cout << "ÊäÈë ¼¼ÄÜÃû:";
 			cin >> skill;
-			cout << "è¾“å…¥ æŠ€èƒ½ç±»åž?";
+			cout << "ÊäÈë ¼¼ÄÜÀàÐÍ:";
 			cin >> skill_type;
-			cout << "è¾“å…¥ æŠ€èƒ½ä»‹ç»?";
+			cout << "ÊäÈë ¼¼ÄÜ½éÉÜ:";
 			cin >> skill_introduction;
-			cout << "è¾“å…¥ æŠ€èƒ½è“è€?";
+			cout << "ÊäÈë ¼¼ÄÜÀ¶ºÄ:";
 			cin >> mana;
 			STR = "INSERT INTO skills_table (character_name, skill_name, skill_type, skill_description, power_level)VALUES\
 					('" + escapeSQL(name)
@@ -366,14 +366,14 @@ public:
 			sql = STR.c_str();
 			if (!INSERT(sql))
 			{
-				cout << "æ’å…¥é”™è¯¯ ï¼Œè§’è‰²ä¸å­˜åœ¨æˆ–æ•°æ®åº“æœªè¿žæŽ?....." << endl;
-				cout << "å¼ºåˆ¶ç»“æŸ......" << endl;
+				cout << "²åÈë´íÎó £¬½ÇÉ«²»´æÔÚ»òÊý¾Ý¿âÎ´Á¬½Ó......" << endl;
+				cout << "Ç¿ÖÆ½áÊø......" << endl;
 				CLS();
 				return;
 			}
 			else
 			{
-				cout << "ä¿®æ”¹ä¿å­˜ä¸?....." << endl;
+				cout << "ÐÞ¸Ä±£´æÖÐ......" << endl;
 				CLS();
 			}
 		}
@@ -381,27 +381,27 @@ public:
 
 	}
 
-	bool BASE_ALTER()							// ä¿®æ”¹è‹±é›„
+	bool BASE_ALTER()							// ÐÞ¸ÄÓ¢ÐÛ
 	{
 		system("cls");
 		string STR;
 		string name, race, height, energy, city, force, rank, introduce;
 		const char* sql;
-		cout << "è¾“å…¥éœ€è¦ä¿®æ”¹çš„è‹±é›„" << endl;
+		cout << "ÊäÈëÐèÒªÐÞ¸ÄµÄÓ¢ÐÛ" << endl;
 		cin >> name;
-		cout << "è¾“å…¥ç§æ— æˆ?NULL:" << endl;
+		cout << "ÊäÈëÖÖ×å »ò NULL:" << endl;
 		cin >> race;
-		cout << "è¾“å…¥èº«é«˜ æˆ?0:" << endl;
+		cout << "ÊäÈëÉí¸ß »ò 0:" << endl;
 		cin >> height;
-		cout << "è¾“å…¥èƒ½é‡ æˆ?NULL:" << endl;
+		cout << "ÊäÈëÄÜÁ¿ »ò NULL:" << endl;
 		cin >> energy;
-		cout << "è¾“å…¥åŸŽå¸‚ æˆ?NULL:" << endl;
+		cout << "ÊäÈë³ÇÊÐ »ò NULL:" << endl;
 		cin >> city;
-		cout << "è¾“å…¥åŠ¿åŠ› æˆ?NULL:" << endl;
+		cout << "ÊäÈëÊÆÁ¦ »ò NULL:" << endl;
 		cin >> force;
-		cout << "è¾“å…¥èº«ä»½ æˆ?NULL:" << endl;
+		cout << "ÊäÈëÉí·Ý »ò NULL:" << endl;
 		cin >> rank;
-		cout << "è¾“å…¥è§’è‰²ç®€ä»?æˆ?NULL:" << endl;
+		cout << "ÊäÈë½ÇÉ«¼ò½é »ò NULL:" << endl;
 		cin >> introduce;
 		STR = "UPDATE character_table SET race = '" + escapeSQL(race)
 			+ "',height = '" + escapeSQL(height)
@@ -417,25 +417,25 @@ public:
 		return true;
 	}
 
-	void SKILLS_DELETE()					// åˆ é™¤è‹±é›„æŠ€èƒ?
+	void SKILLS_DELETE()					// É¾³ýÓ¢ÐÛ¼¼ÄÜ
 	{
 		system("cls");
 		string STR;
 		string name, name_skills;
 		const char* sql;
 		const char* sqll;
-		cout << "è¾“å…¥è¦åˆ é™?æŠ€èƒ?çš?è‹±é›„:" << endl;
+		cout << "ÊäÈëÒªÉ¾³ý ¼¼ÄÜ µÄ Ó¢ÐÛ:" << endl;
 		cin >> name;
 		STR = "SELECT * FROM skills_table WHERE character_name = '" + escapeSQL(name) + "'";
 		sqll = STR.c_str();
 		if (!seek(sqll, 5))
 		{
-			cout << "å¼ºåˆ¶ç»“æŸ......" << endl;
+			cout << "Ç¿ÖÆ½áÊø......" << endl;
 			Sleep(3000);
 			system("cls");
 			return;
 		}
-		cout << "è¾“å…¥éœ€è¦åˆ é™¤çš„æŠ€èƒ?";
+		cout << "ÊäÈëÐèÒªÉ¾³ýµÄ¼¼ÄÜ:";
 		cin >> name_skills;
 		STR = "DELETE FROM skills_table WHERE character_name = '" + escapeSQL(name)
 			+ "'and skill_name = '" + escapeSQL(name_skills) + "'; ";
@@ -443,15 +443,15 @@ public:
 		CANCLE(sql);
 	}
 
-	void RELATIONSHIP_DELETE()				// åˆ é™¤è‹±é›„å…³ç³»
+	void RELATIONSHIP_DELETE()				// É¾³ýÓ¢ÐÛ¹ØÏµ
 	{
 		system("cls");
 		string STR;
 		string character_name, related_character_name, YES;
 		const char* sql;
-		cout << "è¾“å…¥è¦åˆ é™¤å…³ç³»çš„è‹±é›„:" << endl;
+		cout << "ÊäÈëÒªÉ¾³ý¹ØÏµµÄÓ¢ÐÛ:" << endl;
 		cin >> character_name;
-		cout << "è¾“å…¥è¢«åˆ é™¤å…³ç³»çš„è‹±é›„:" << endl;
+		cout << "ÊäÈë±»É¾³ý¹ØÏµµÄÓ¢ÐÛ:" << endl;
 		cin >> related_character_name;
 
 		STR = "SELECT * FROM relationship_table WHERE character_name = '"
@@ -466,7 +466,7 @@ public:
 		}
 		else
 		{
-			cout << "å°†è¦åˆ é™¤ä»¥ä¸Šå…³ç³»ï¼ˆY/Nï¼? << endl;
+			cout << "½«ÒªÉ¾³ýÒÔÉÏ¹ØÏµ£¨Y/N£©" << endl;
 			cin >> YES;
 			if (YES == "Y" || YES == "y")
 			{
@@ -478,13 +478,13 @@ public:
 			}
 			else
 			{
-				cout << "å·²å–æ¶ˆåˆ é™¤ï¼Œé€€å‡ºåˆ é™¤ä¸­......" << endl;
+				cout << "ÒÑÈ¡ÏûÉ¾³ý£¬ÍË³öÉ¾³ýÖÐ......" << endl;
 				return;
 			}
 		}
 	}
 
-	void CHARACTER_DELETE()					// åˆ é™¤è‹±é›„
+	void CHARACTER_DELETE()					// É¾³ýÓ¢ÐÛ
 	{
 		system("cls");
 		int num;
@@ -492,7 +492,7 @@ public:
 		string STR;
 		string character_name, YES;
 		const char* sql;
-		cout << "è¾“å…¥è¦åˆ é™¤çš„è‹±é›„:" << endl;
+		cout << "ÊäÈëÒªÉ¾³ýµÄÓ¢ÐÛ:" << endl;
 		cin >> character_name;
 		STR = "SELECT * FROM character_table WHERE name = '" + character_name + "'";
 		sql = STR.c_str();
@@ -504,7 +504,7 @@ public:
 		}
 		else
 		{
-			cout << "å…³äºŽè¯¥è‹±é›„çš„æ‰€æœ‰ä¿¡æ?åŒ…æ‹¬æŠ€èƒ½å’Œå…³ç³»ç½?éƒ½ä¼šè¢«åˆ é™¤ï¼Œä½ ç¡®å®šè¦è¿™ä¹ˆæ“ä½œå?Y/N)?" << endl;
+			cout << "¹ØÓÚ¸ÃÓ¢ÐÛµÄËùÓÐÐÅÏ¢(°üÀ¨¼¼ÄÜºÍ¹ØÏµÍø)¶¼»á±»É¾³ý£¬ÄãÈ·¶¨ÒªÕâÃ´²Ù×÷Âð(Y/N)?" << endl;
 			cin >> YES;
 			if (YES == "Y" || YES == "y")
 			{
@@ -545,7 +545,7 @@ public:
 };
 
 
-bool SetConsoleFontSize(int fontSize = 30)			// ç”¨äºŽä¿®æ”¹çª—å£å­—ä½“å¤§å°
+bool SetConsoleFontSize(int fontSize = 30)
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	if (hConsole == INVALID_HANDLE_VALUE) return false;
@@ -574,12 +574,12 @@ int main()
 	int num = 1;
 	while (num)
 	{
-		cout << " è¯·é€‰æ‹©ä»¥ä¸‹ åŠŸèƒ½ ä¸­çš„ä¸€ä¸ªæˆ–æŒ?-1 é€€å‡? << endl;
-		cout << "  æ‰€æœ?è‹±é›„ ä»‹ç» -------> 1" << endl;
-		cout << "  è‹±é›„ ä»‹ç» ------------> 2" << endl;
-		cout << "  è‹±é›„ å…³ç³»ç½?----------> 3" << endl;
-		cout << "  è‹±é›„ æŠ€èƒ½ä»‹ç»?--------> 4" << endl;
-		cout << "  ä¿®æ”¹ è‹±é›„ ä¿¡æ¯--------> 5" << endl;
+		cout << " ÇëÑ¡ÔñÒÔÏÂ ¹¦ÄÜ ÖÐµÄÒ»¸ö»ò°´ -1 ÍË³ö" << endl;
+		cout << "  ËùÓÐ Ó¢ÐÛ ½éÉÜ -------> 1" << endl;
+		cout << "  Ó¢ÐÛ ½éÉÜ ------------> 2" << endl;
+		cout << "  Ó¢ÐÛ ¹ØÏµÍø ----------> 3" << endl;
+		cout << "  Ó¢ÐÛ ¼¼ÄÜ½éÉÜ --------> 4" << endl;
+		cout << "  ÐÞ¸Ä Ó¢ÐÛ ÐÅÏ¢--------> 5" << endl;
 		cin >> num;
 		Sleep(300);
 		system("cls");
@@ -601,12 +601,12 @@ int main()
 		case 5:
 		{
 			int num;
-			cout << "ä¿®æ”¹è‹±é›„éœ€è¦ç®¡ç†å‘˜æƒé™ï¼Œè¯·è¾“å…¥å¯†ç éªŒè¯èº«ä»½(123456)" << endl;
+			cout << "ÐÞ¸ÄÓ¢ÐÛÐèÒª¹ÜÀíÔ±È¨ÏÞ£¬ÇëÊäÈëÃÜÂëÑéÖ¤Éí·Ý(123456)" << endl;
 			cin >> num;
 			if (num != 123456)
 			{
-				cout << "éªŒè¯é”™è¯¯ï¼Œç¦æ­¢åˆ é™¤è§’è‰?....." << endl;
-				cout << "é€€å‡ºä¸­......" << endl;
+				cout << "ÑéÖ¤´íÎó£¬½ûÖ¹É¾³ý½ÇÉ«......" << endl;
+				cout << "ÍË³öÖÐ......" << endl;
 				Sleep(3000);
 				system("cls");
 				break;
@@ -616,14 +616,14 @@ int main()
 				M.CLS();
 			}
 			int num2;
-			cout << "é€‰æ‹©éœ€è¦ä¿®æ”¹çš„ä¿¡æ¯" << endl;
-			cout << " æ·»åŠ  è‹±é›„  ----------------> 1" << endl;
-			cout << " æ·»åŠ  è‹±é›„ å…³ç³» ------------> 2" << endl;
-			cout << " æ·»åŠ  è‹±é›„ æŠ€èƒ?------------> 3" << endl;
-			cout << " ä¿®æ”¹ è‹±é›„  ----------------> 4" << endl;
-			cout << " åˆ é™¤ è‹±é›„ æŠ€èƒ?------------> 5" << endl;
-			cout << " åˆ é™¤ è‹±é›„ å…³ç³» ------------> 6" << endl;
-			cout << " åˆ é™¤ è‹±é›„ -----------------> 7" << endl;
+			cout << "Ñ¡ÔñÐèÒªÐÞ¸ÄµÄÐÅÏ¢" << endl;
+			cout << " Ìí¼Ó Ó¢ÐÛ  ----------------> 1" << endl;
+			cout << " Ìí¼Ó Ó¢ÐÛ ¹ØÏµ ------------> 2" << endl;
+			cout << " Ìí¼Ó Ó¢ÐÛ ¼¼ÄÜ ------------> 3" << endl;
+			cout << " ÐÞ¸Ä Ó¢ÐÛ  ----------------> 4" << endl;
+			cout << " É¾³ý Ó¢ÐÛ ¼¼ÄÜ ------------> 5" << endl;
+			cout << " É¾³ý Ó¢ÐÛ ¹ØÏµ ------------> 6" << endl;
+			cout << " É¾³ý Ó¢ÐÛ -----------------> 7" << endl;
 			cin >> num2;
 			{
 				switch (num2)
@@ -650,7 +650,7 @@ int main()
 					M.CHARACTER_DELETE();
 					break;
 				default:
-					cout << "ä¿®æ”¹ä¿å­˜ä¸?....." << endl;
+					cout << "ÐÞ¸Ä±£´æÖÐ......" << endl;
 					Sleep(3000);
 
 					break;
@@ -659,7 +659,7 @@ int main()
 		}
 		break;
 		default:
-			cout << "å›¾é‰´å…³é—­ä¸?....." << endl;
+			cout << "Í¼¼ø¹Ø±ÕÖÐ......" << endl;
 			Sleep(3000);
 			return 0;
 		}

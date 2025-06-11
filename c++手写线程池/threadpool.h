@@ -17,10 +17,10 @@ public:
 	Any() = default;
 	~Any() = default;
 
-	Any(const Any&) = default;
+	Any(const Any&) = delete;
 	Any& operator = (const Any&) = delete;
 	Any(Any&&) = default;
-	Any& operator = (Any&&) = delete;
+	Any& operator = (Any&&) = default;
 	template<typename T>
 	Any(T data) :base_(std::make_unique<Derive<T>>(data))
 	{}
@@ -31,7 +31,7 @@ public:
 	T cast_()
 	{
 		// 从base_找到所指的Derive对象，从里面取出data成员变量
-		Derive<T>* pd = dynamic_cast<Derive<T>>(base_.get());
+		Derive<T>* pd = dynamic_cast<Derive<T>*>(base_.get());
 		if (pd == nullptr)
 		{
 			throw "type is unmatch";
@@ -56,13 +56,74 @@ private:
 		{}
 		T data_;
 	};
+	std::unique_ptr<Base> base_; // 存储任意类型数据的基类指针
 };
+
+// 实现一个信号量类，用于控制资源的访问
+class Semaphore
+{
+public:
+	Semaphore(int limit = 0) : resLimit_(0)
+	{}
+	~Semaphore() = default;
+
+	// 获取一个信号量资源
+	void wait()
+	{
+		std::unique_lock<std::mutex>lock(mtx_); // 获取互斥锁
+		// 等待条件变量，直到信号量计数器大于0
+		cond_.wait(lock, [&]()->bool { return resLimit_ > 0; });
+		resLimit_--; // 信号量计数器减1
+	}
+
+	// 增加一个信号量资源
+	void post()
+	{
+		std::unique_lock<std::mutex>lock(mtx_); // 获取互斥锁
+		resLimit_++; // 信号量计数器加1
+		cond_.notify_all(); // 通知其他线程
+	}
+
+private:
+	std::mutex mtx_; // 互斥锁
+	std::condition_variable cond_; // 条件变量
+	int resLimit_; // 信号量计数器
+};
+
+class Task; // 前向声明Task类
+// 实现接收提交到线程池的任务，并返回结果的类
+class Result
+{
+public:
+	Result(std::shared_ptr<Task> task, bool isValid = true);
+
+
+	void setVal(Any any);
+	// 获取任务执行结果
+	Any get();
+
+	~Result() = default;
+private:
+	Any any_; // 存储任务执行结果的Any类型
+	Semaphore sem_; // 信号量，用于控制结果的访问
+	std::shared_ptr<Task> task_; // 任务指针，用于关联任务和结果
+	std::atomic_bool isValid_; // 结果是否有效的标志位
+
+};
+
 
 
 // 任务抽象基类
 class Task {
 public:
+	Task();
+	~Task() = default;
+	void exec();
+
+	void setResult(Result* res);// 设置任务执行结果
 	virtual Any run() = 0; // 任务执行方法
+private:
+	Result* result_; // 任务执行结果
 };
 
 
@@ -120,7 +181,7 @@ public:
 	void setTaskQueMaxThreshHold(int threshhold);
 
 	// 给线程池提交任务
-	void submitTask(std::shared_ptr<Task>sp);
+	Result submitTask(std::shared_ptr<Task>sp);
 
 	// 开启线程池
 	void start(int initThreadSize = 4);

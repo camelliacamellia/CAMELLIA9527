@@ -3,7 +3,7 @@
 #include<thread>
 #include<iostream>
 
-const int TASK_MAX_THRESHHOLD = 4; // 任务队列数量上限阈值
+const int TASK_MAX_THRESHHOLD = 1024; // 任务队列数量上限阈值
 
 ThreadPool::ThreadPool()
 	: initThreadSize_(0),

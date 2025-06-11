@@ -5,7 +5,7 @@
 #include<mysql.h>
 #include<cstring>
 #include<stdlib.h>
-using namespace std;
+using namespace std; 
 
 
 

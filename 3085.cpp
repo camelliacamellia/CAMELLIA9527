@@ -15,12 +15,7 @@ public:
             int a = ans[i];
             for (int j = i + 1; j < 26; j++)
             {
-                if (ans[j] - ans[i] <= k)
-                    a += ans[j];
-                else
-                {
-                    a += ans[i] + k;
-                }
+                a += min(ans[j], ans[i] + k);
             }
             path.push_back(a);
         }

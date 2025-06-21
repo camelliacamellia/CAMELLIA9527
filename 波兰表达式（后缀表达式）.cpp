@@ -12,7 +12,7 @@
 */
 
 
-// 判断在该出是否需要出栈
+// 判断在该处是否需要出栈
 bool Priority(char ch, char topch)
 {
 	if ((ch == '*' || ch == '/') && (topch == '+' || topch == '-'))

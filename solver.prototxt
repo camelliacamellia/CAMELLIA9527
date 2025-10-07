@@ -1,0 +1,33 @@
+# U-Net Solver 配置文件
+
+# 训练网络定义文件
+net: "unet_train.prototxt"
+
+# 测试网络配置
+test_iter: 100           # 测试迭代次数
+test_interval: 1000      # 每1000次迭代测试一次
+
+# 基础学习率
+base_lr: 0.0001
+
+# 学习率策略
+lr_policy: "step"
+gamma: 0.1               # 学习率衰减因子
+stepsize: 10000          # 每10000次迭代降低学习率
+
+# 优化器设置
+momentum: 0.99
+weight_decay: 0.0005
+
+# 显示和保存设置
+display: 100             # 每100次迭代显示一次训练信息
+max_iter: 100000         # 最大迭代次数
+snapshot: 5000           # 每5000次迭代保存一次模型快照
+snapshot_prefix: "unet"  # 快照文件前缀
+
+# 求解器类型
+solver_mode: GPU         # 使用GPU训练，如果只有CPU，改为CPU
+solver_type: ADAM        # 使用Adam优化器
+
+# 随机种子（可选，用于可重复性）
+random_seed: 1234
